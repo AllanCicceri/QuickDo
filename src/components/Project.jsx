@@ -1,11 +1,14 @@
 import './Project.css'
-import {GrProjects} from 'react-icons/gr/'
+import {FaProjectDiagram} from 'react-icons/fa/'
+import { IconContext } from "react-icons";
 
 function Project({item}){
-    
+    const style = { color: "#FFDE70", fontSize: "1.5em" }
+
     return(
         <div className="project-item">
-            <GrProjects />
+            <FaProjectDiagram style={style}/>
+        
             <div className="project-ItemName">
                 {item.title}
             </div>

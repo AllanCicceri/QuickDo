@@ -1,12 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@200&display=swap');
+
+:root{
+  --grayColor: #858585;
+}
+
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #DCFFFF;
+  background-color: #ECF5FE;
+  font-family: 'Sora', sans-serif;
 }
 
 .app{
   height: 100vh;
+}
 
-  display: flex; 
+.appBody{
+  display: flex;
+  
+}
+
+.projects-container{
+  width: 10%;
+  margin: 2em 0 2em 2em;
+  padding: 15px 5px;
+  border: var(--grayColor) 1px dashed;
+}
+
+.projects-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.projects-label{
+  width: 100%;
+  font-weight: 500;
+  color: var(--grayColor);
+}
+
+.projects-insertProject{
+  width: 30%;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  color: var(--grayColor);
+  cursor: pointer;
 }
