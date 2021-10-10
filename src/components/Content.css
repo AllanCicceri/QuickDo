@@ -2,7 +2,7 @@
 
 .content{
     background-color: #FFF;
-    width: 90%;
+    width: 85%;
     margin: 2em 2em;
     padding: 10px 10px;
     border-radius: 30px;
@@ -40,8 +40,30 @@
 .content-tasks{
     width: 100%;
     height: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-direction: column;
     background-color: transparent;
-    overflow: auto;
+    overflow: scroll;
+}
+
+.tasks-todo,.tasks-doing,.tasks-done{
+    flex-direction: column;
+    height: 30%;
+    margin-bottom: 5px;
+    font-family: 'Sora', sans-serif;
+    color: #858585;
+    background-color: transparent;
+}
+
+.taskItems-todo, .taskItems-doing, .taskItems-done{
+    display: block;
+    width: 100%;
+    height: 150px;
+    background-color: transparent;
+    overflow: scroll;
+    white-space: nowrap;
+}
+.doing-label, .done-label, .todo-label{
+    background-color: transparent;
+    margin-left: 10px;
 }

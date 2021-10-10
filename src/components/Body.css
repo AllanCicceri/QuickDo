@@ -1,0 +1,33 @@
+
+.appBody{
+    display: flex;
+    height: 90vh;
+  }
+  
+  .projects-container{
+    width: 30%;
+    margin: 2em 0 2em 2em;
+    padding: 15px 5px;
+    border: var(--grayColor) 1px dashed;
+  }
+  
+  .projects-header{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .projects-label{
+    width: 100%;
+    font-weight: 500;
+    color: var(--grayColor);
+  }
+  
+  .projects-insertProject{
+    width: 30%;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    color: var(--grayColor);
+    cursor: pointer;
+  }
+  
