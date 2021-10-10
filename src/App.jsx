@@ -9,7 +9,7 @@ function App() {
   const [user, setUser] = useState(null)
 
   if(user === null)
-    return(<Login/>)
+    return(<Login userLogin={(user) => setUser(user)}/>)
 
   return (
     
