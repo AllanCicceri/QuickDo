@@ -18,8 +18,14 @@ export default {
     fbPopup: async () => {
         const provider = new firebase.auth.FacebookAuthProvider()
         const result = await app.auth().signInWithPopup(provider)
+        // const avatar = await fetch(`https://graph.facebook.com/v2.8/${result.additionalUserInfo.id}?fields=picture.type(small)&access_token=${result.accessToken}`)
         return result
-    }    
+    },
+    fbAvatar: async (faceInfo) => {
+        const url = `https://graph.facebook.com/v2.8/${faceInfo.additionalUserInfo.profile.id}?fields=picture.type(small)&access_token=${faceInfo.credential.accessToken}`
+        const result = await fetch(url)
+        return  result
+    }
 }
 
 // async function getUsers(db){

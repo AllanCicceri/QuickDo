@@ -21,7 +21,10 @@ function Login({userLogin = f=>f}){
     async function handleFacebookLogin(){
         let result = await api.fbPopup()
         if(result){
+
             userLogin('user')
+            const avatar = await api.fbAvatar(result)
+            console.log(avatar.url)
         }else{
             alert('Erro!')
         }
