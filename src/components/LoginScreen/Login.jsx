@@ -2,10 +2,13 @@ import './Login.css'
 import * as FaIcons from 'react-icons/fa'
 import api from '../../api/api'
 import { useState } from 'react'
+import {useDispatch} from 'react-redux'
+import {createUser} from '../../redux/actions/User.actions'
 
 function Login({userLogin = f=>f}){
     const iconStyles = {fontSize:'30px', backgroundColor:'transparent', marginLeft:'20px',cursor:'pointer'}
     const [avatar, setAvatar] = useState('')
+    const dispatch = useDispatch()
 
     const handleClick = e => {
         const socialMedia = e.currentTarget.id
@@ -23,12 +26,12 @@ function Login({userLogin = f=>f}){
     async function handleFacebookLogin(){
         let result = await api.fbPopup()
         if(result){
+            const name = await result.additionalUserInfo.profile.name
+            const email = await result.user.email
+            const avatar = await api.fbAvatar(result).then(res => res.json()).then(out => out.picture.data.url)
 
-            // userLogin('user')
-            const avatarResult = await api.fbAvatar(result).then(res => res.json()).then(out => out.picture.data.url)
-            // const avatarResult = api.fbAvatar(result).then(res => res.json()).then(out => console.log(out))
-            console.log(avatarResult)
-            setAvatar(avatarResult)
+            dispatch(createUser(name, email, avatar))
+            // setAvatar(avatarResult)
         }else{
             alert('Erro!')
         }
@@ -51,10 +54,6 @@ function Login({userLogin = f=>f}){
                         id="twitter"  onClick={handleClick} />
                     <FaIcons.FaInstagram style={{...iconStyles, color: '#c13584'}}
                         id="instagram"  onClick={handleClick} />
-                </div>
-                <div>imagem aqui
-                    <img src={avatar} alt="" />
-
                 </div>
 
             </div>

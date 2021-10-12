@@ -1,6 +1,9 @@
 import './Header.css'
+import {useSelector} from 'react-redux'
 
 function Header(){
+    const state = useSelector(state => state.user)
+
     return(
         <header className="header">
             <div className="logo">
@@ -10,8 +13,8 @@ function Header(){
                 <input type="text" placeholder="search for task..."/>
             </div>
             <div className="user">
-                <img src="avatar.png" alt="" />
-                <div className="user-name">User Name</div>
+                <img src={state.avatar} alt="" />
+                <div className="user-name">{state.name}</div>
             </div>
         </header>
     )

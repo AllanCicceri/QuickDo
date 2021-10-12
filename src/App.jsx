@@ -4,12 +4,13 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Login from './components/LoginScreen/Login';
 import { useState } from 'react';
+import {useSelector} from 'react-redux'
 
 function App() {
-  const [user, setUser] = useState(null)
+  const state = useSelector(state => state.user)
 
-  if(user === null)
-    return(<Login userLogin={(user) => setUser(user)}/>)
+  if(state === null)
+    return(<Login />)
 
   return (
     
