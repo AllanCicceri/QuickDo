@@ -5,9 +5,8 @@ import { useState } from 'react'
 import {useDispatch} from 'react-redux'
 import {createUser} from '../../redux/actions/User.actions'
 
-function Login({userLogin = f=>f}){
+function Login(){
     const iconStyles = {fontSize:'30px', backgroundColor:'transparent', marginLeft:'20px',cursor:'pointer'}
-    const [avatar, setAvatar] = useState('')
     const dispatch = useDispatch()
 
     const handleClick = e => {
@@ -26,12 +25,16 @@ function Login({userLogin = f=>f}){
     async function handleFacebookLogin(){
         let result = await api.fbPopup()
         if(result){
-            const name = await result.additionalUserInfo.profile.name
-            const email = await result.user.email
-            const avatar = await api.fbAvatar(result).then(res => res.json()).then(out => out.picture.data.url)
-
-            dispatch(createUser(name, email, avatar))
-            // setAvatar(avatarResult)
+            const user = {
+                id: result.additionalUserInfo.profile.id,
+                name: result.additionalUserInfo.profile.name,
+                email: result.user.email,
+                avatar: await api.fbAvatar(result).then(res => res.json()).then(out => out.picture.data.url)
+            }
+            
+            api.addUser(user)
+            
+            dispatch(createUser(user))
         }else{
             alert('Erro!')
         }

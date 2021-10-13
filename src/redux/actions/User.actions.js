@@ -1,10 +1,10 @@
 import ActionTypes from './User.actiontypes'
 
 
-function createUser(name, email, avatar){
+function createUser(user){
     return {
         type: ActionTypes.insert,
-        payload: [name, email, avatar]
+        payload: user
     }
 }
 function updateUser(){

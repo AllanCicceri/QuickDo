@@ -2,6 +2,8 @@ import firebase from "firebase/app";
 import 'firebase/firestore';
 import 'firebase/firebase-auth'
 
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyBCT2EFv1QZFDol2q4KK9bQEKTr_tlnFA4",
     authDomain: "quicktaksapp.firebaseapp.com",
@@ -25,12 +27,13 @@ export default {
         const url = `https://graph.facebook.com/v2.8/${faceInfo.additionalUserInfo.profile.id}?fields=picture.type(small)&access_token=${faceInfo.credential.accessToken}`
         const result = await fetch(url)
         return  result
+    },
+
+    addUser: async (user) => {
+        await db.collection('users').doc(user.id).set({
+            name: user.name,
+            email: user.email,
+            avatar: user.avatar
+        }, {merge:true})
     }
 }
-
-// async function getUsers(db){
-//     const usersCol = collection(db, 'users')
-//     const userSnapshot = await getDocs(usersCol);
-//     const userList = userSnapshot.docs.map(doc => doc.data());
-//     return userList;
-// }
