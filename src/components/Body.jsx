@@ -1,6 +1,6 @@
 import './Body.css'
-import ListOfProjects from './ListOfProjects'
-import Content from './Content'
+import ListOfProjects from './ProjectsNav/ListOfProjects'
+import Content from './TasksContent/Content'
 
 function Body() {
     return (
