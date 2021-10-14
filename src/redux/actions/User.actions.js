@@ -1,31 +1,20 @@
 import ActionTypes from './User.actiontypes'
 
+const UserActions = {
+    userLogin(user){
+        return {
+            type: ActionTypes.login,
+            payload: user,
+        }
+    },
 
-function createUser(user){
-    return {
-        type: ActionTypes.insert,
-        payload: user
+    userLogout(){
+        return {
+            type: ActionTypes.logout,
+        }
     }
-}
-function updateUser(){
-    return {
-        type: ActionTypes.update,
-        payload: []
-    }
-}
 
-function consultUser(){
-    return {
-        type: ActionTypes.consult,
-        payload: []
-    }
 }
 
-function deleteUser(){
-    return {
-        type: ActionTypes.delete,
-        payload: []
-    }
-}
 
-export  {createUser}
+export default UserActions

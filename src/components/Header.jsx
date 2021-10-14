@@ -1,8 +1,12 @@
 import './Header.css'
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
+import UserActions from '../redux/actions/User.actions'
 
 function Header(){
     const state = useSelector(state => state.user)
+    const dispatch = useDispatch()
+    
+    const userLogOut = () => dispatch(UserActions.userLogout())
 
     return(
         <header className="header">
@@ -13,7 +17,7 @@ function Header(){
                 <input type="text" placeholder="search for task..."/>
             </div>
             <div className="user">
-                <img src={state.avatar} alt="" />
+                <img src={state.avatar} alt="" onClick={userLogOut}/>
                 <div className="user-name">{state.name}</div>
             </div>
         </header>

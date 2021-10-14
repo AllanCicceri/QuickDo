@@ -1,8 +1,6 @@
 const ActionTypes = {
-    insert: 'INSERT',
-    update: 'UPDATE',
-    consult: 'CONSULT',
-    delete: 'DELETE'
+    login: 'LOGIN',
+    logout: 'LOGOUT',
 }
 
 export default ActionTypes

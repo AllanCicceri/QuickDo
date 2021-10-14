@@ -3,7 +3,7 @@ import * as FaIcons from 'react-icons/fa'
 import api from '../../api/api'
 import { useState } from 'react'
 import {useDispatch} from 'react-redux'
-import {createUser} from '../../redux/actions/User.actions'
+import UserActions from '../../redux/actions/User.actions'
 
 function Login(){
     const iconStyles = {fontSize:'30px', backgroundColor:'transparent', marginLeft:'20px',cursor:'pointer'}
@@ -33,8 +33,8 @@ function Login(){
             }
             
             api.addUser(user)
-            
-            dispatch(createUser(user))
+            console.log('aqyu')
+            dispatch(UserActions.userLogin(user))
         }else{
             alert('Erro!')
         }
