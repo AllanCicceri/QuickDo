@@ -1,0 +1,9 @@
+main.tasksContainer{
+    width: 95%;
+    height: 90%;
+    padding: 0 20px;
+    margin: 10px;
+    border-radius: 50px;
+    background-color: #fff;
+    box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, .2);
+}

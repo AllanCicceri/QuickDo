@@ -1,6 +1,6 @@
 import './AsideContainer.css'
 import User from './User/User'
-import ProjectsNav from '../ProjectsNav/ProjectsNav'
+import ProjectsNav from './ProjectsNav/ProjectsNav'
 
 function AsideContainer(){
     return (

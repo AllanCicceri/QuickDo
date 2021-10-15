@@ -8,7 +8,7 @@ import UserActions from '../../redux/actions/User.actions'
 function Login(){
     const iconStyles = {fontSize:'30px', backgroundColor:'transparent', marginLeft:'20px',cursor:'pointer'}
     const dispatch = useDispatch()
-
+    
     const handleClick = e => {
         const socialMedia = e.currentTarget.id
         
