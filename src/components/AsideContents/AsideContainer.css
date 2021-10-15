@@ -1,0 +1,9 @@
+aside.container{
+    width: 20%;
+    min-width: 200px;
+    height: 100%;
+    padding: 10px 5px;
+    
+    display: flex;
+    flex-direction: column;
+}

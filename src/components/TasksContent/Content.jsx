@@ -1,33 +1,36 @@
 import './Content.css'
 import TaskItem from './TaskItem'
 
-function Content(){
+function Content() {
     const tasksTodo = [
-        {id:1, title:'Task1', obs: 'I haveto do that and that...', state:'todo'},
-        {id:2, title:'Task2', obs: 'I haveto do that thing about that sht...', state:'todo'},
-        {id:1, title:'Task1', obs: 'I haveto do that and that...', state:'todo'},
-        {id:2, title:'Task2', obs: 'I haveto do that thing about that sht...', state:'todo'},
-        {id:1, title:'Task1', obs: 'I haveto do that and that...', state:'todo'},
-        {id:1, title:'Task1', obs: 'I haveto do that and that...', state:'todo'},
-        {id:2, title:'Task2', obs: 'I haveto do that thing about that sht...', state:'todo'},
-        {id:1, title:'Task1', obs: 'I haveto do that and that...', state:'todo'},
-        {id:2, title:'Task2', obs: 'I haveto do that thing about that sht...', state:'todo'}
+        { id: 1, title: 'Task1', obs: 'I haveto do that and that...', state: 'todo' },
+        { id: 2, title: 'Task2', obs: 'I haveto do that thing about that sht...', state: 'todo' },
+        { id: 1, title: 'Task1', obs: 'I haveto do that and that...', state: 'todo' },
+        { id: 2, title: 'Task2', obs: 'I haveto do that thing about that sht...', state: 'todo' },
+        { id: 1, title: 'Task1', obs: 'I haveto do that and that...', state: 'todo' },
+        { id: 1, title: 'Task1', obs: 'I haveto do that and that...', state: 'todo' },
+        { id: 2, title: 'Task2', obs: 'I haveto do that thing about that sht...', state: 'todo' },
+        { id: 1, title: 'Task1', obs: 'I haveto do that and that...', state: 'todo' },
+        { id: 2, title: 'Task2', obs: 'I haveto do that thing about that sht...', state: 'todo' }
     ]
     const tasksDoing = [
-        {id:1, title:'Task1', obs: 'I haveto do that and that...', state:'doing'}, 
-        {id:2, title:'Task2', obs: 'I haveto do that thing about that sht...', state:'doing'},
+        { id: 1, title: 'Task1', obs: 'I haveto do that and that...', state: 'doing' },
+        { id: 2, title: 'Task2', obs: 'I haveto do that thing about that sht...', state: 'doing' },
     ]
     const tasksDone = [
-        {id:2, title:'Task2', obs: 'I haveto do that thing about that sht...', state:'done'},
-        {id:1, title:'Task1', obs: 'I haveto do that and that...', state:'done'},
-        {id:2, title:'Task2', obs: 'I haveto do that thing about that sht...', state:'done'},
-        
+        { id: 2, title: 'Task2', obs: 'I haveto do that thing about that sht...', state: 'done' },
+        { id: 1, title: 'Task1', obs: 'I haveto do that and that...', state: 'done' },
+        { id: 2, title: 'Task2', obs: 'I haveto do that thing about that sht...', state: 'done' },
+
     ]
 
-    return(
+    return (
         <main className="content">
             <div className="content-header">
                 <div className="content-projectName">ProjectName</div>
+                <div className="searchContainer">
+                    <input type="text" placeholder="search for task..." />
+                </div>
                 <div className="content-insertTask">+ Add Task</div>
             </div>
             <div className="content-tasks">
@@ -36,7 +39,7 @@ function Content(){
                     <div className="taskItems-todo">
                         {tasksTodo.map(item => (
                             <TaskItem key={item.id} item={item} />
-                        ) )}
+                        ))}
                     </div>
                 </div>
 
@@ -45,7 +48,7 @@ function Content(){
                     <div className="taskItems-doing">
                         {tasksDoing.map(item => (
                             <TaskItem key={item.id} item={item} />
-                        ) )}
+                        ))}
                     </div>
                 </div>
                 <div className="tasks-done">
@@ -53,7 +56,7 @@ function Content(){
                     <div className="taskItems-done">
                         {tasksDone.map(item => (
                             <TaskItem key={item.id} item={item} />
-                        ) )}
+                        ))}
                     </div>
                 </div>
             </div>

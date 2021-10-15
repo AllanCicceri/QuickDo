@@ -4,12 +4,19 @@
     height: 90vh;
   }
   
-  .projects-container{
+  /* .projects-container{
     width: 30%;
     margin: 2em 0 2em 2em;
     padding: 15px 5px;
     border: var(--grayColor) 1px dashed;
+    display: flex;
+    flex-direction: column;
   }
+  
+  .user{
+    width: 100%;
+    height: 10%;
+  } */
   
   .projects-header{
     display: flex;

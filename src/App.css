@@ -9,10 +9,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #ECF5FE;
   font-family: 'Sora', sans-serif;
 }
 
 .app{
+  background-color: #ECF5FE;
   height: 100vh;
+  display: flex;
 }
