@@ -14,8 +14,8 @@
 
 .app{
   background-color: #C4D6E3;
-  ;
   /* background-color: #ECF5FE; */
   height: 100vh;
+  min-height: 900px;
   display: flex;
 }

@@ -1,16 +1,16 @@
-import ActionTypes from './User.actiontypes'
+import ActionTypes from './ActionTypes'
 
 const UserActions = {
     userLogin(user){
         return {
-            type: ActionTypes.login,
+            type: ActionTypes.user.login,
             payload: user,
         }
     },
 
     userLogout(){
         return {
-            type: ActionTypes.logout,
+            type: ActionTypes.user.logout,
         }
     }
 
