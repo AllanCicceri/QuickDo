@@ -4,7 +4,7 @@ function UserReducer(state=null, actions){
     
     switch (actions.type) {
         case ActionTypes.user.login:
-            return {name: actions.payload.name, email: actions.payload.email, avatar: actions.payload.avatar }
+            return {id: actions.payload.id, name: actions.payload.name, email: actions.payload.email, avatar: actions.payload.avatar }
             
         case ActionTypes.user.logout:
             return null

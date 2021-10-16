@@ -35,5 +35,9 @@ export default {
             email: user.email,
             avatar: user.avatar
         }, {merge:true})
-    }
+    },
+
+    addProject: (user, project) => {
+        const userDoc = db.collection('users').doc(user.id).collection('projects').set(project, {merge:true})
+    },
 }
