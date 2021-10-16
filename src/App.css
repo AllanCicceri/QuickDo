@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@200&display=swap');
 
 :root{
+  --blackColor: #0C120C;
   --grayColor: #858585;
+  --yellowColor: #FBB02D;
+  --blueColor: #C4D6E3;
+  --redColor: #E23C4A;
+  --greenColor: #99D17B;
 }
 
 
@@ -13,8 +18,7 @@
 }
 
 .app{
-  background-color: #C4D6E3;
-  /* background-color: #ECF5FE; */
+  background-color: var(--blueColor);
   height: 100vh;
   min-height: 900px;
   display: flex;

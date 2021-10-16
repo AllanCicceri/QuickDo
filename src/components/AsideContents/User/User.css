@@ -16,4 +16,5 @@
 .user-name{
     padding-top: 10px;
     font-weight: bold;
+    color: var(--grayColor);
 }
