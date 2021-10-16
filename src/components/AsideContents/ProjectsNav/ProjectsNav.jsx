@@ -6,7 +6,10 @@ function ProjectsNav() {
 
     return (
         <div className="projects-container">
-            <div className="ListOfProjects">
+            <div className="projects-addProject-container">
+                <div className="projects-addProject-btn">+ add Project</div>
+            </div>
+            <div className="projects-ListOfProjects">
                 {projects.map((item) => (
                     <Project key={item.id} item={item} />
                 ))}

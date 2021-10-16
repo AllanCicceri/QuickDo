@@ -7,3 +7,27 @@
     border: dashed 1px #858585;
     border-radius: 10px;
 }
+
+.projects-addProject-container{
+    display: flex;
+    justify-content: center;
+}
+.projects-addProject-btn{
+    width: 70%;
+    height: 20px;
+    padding: 1px;
+    margin-top: 5px;
+
+    text-align: center;
+    font-size: .8rem;
+    font-weight: bold;
+
+    box-shadow: 1px 1px 5px 1px rgba(50, 50, 50, .2);
+    background-color: #FBB02D;
+    color: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.projects-ListOfProjects{
+    margin-top: 15px;
+}

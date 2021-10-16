@@ -5,7 +5,7 @@ import {useDispatch} from 'react-redux'
 
 
 function Project({item}){
-    const style = { color: "#FBB02D", fontSize: "1.5em" }
+    const style = { color: "#E23C4A", fontSize: "1.5em" }
     const dispatch = useDispatch()
 
     const dispatchProject = () => dispatch(ProjectActions.selectProject(item))
