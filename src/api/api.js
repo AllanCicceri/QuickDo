@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import 'firebase/firestore';
 import 'firebase/firebase-auth'
+import { FaCommentsDollar } from "react-icons/fa";
 
 
 
@@ -40,4 +41,10 @@ export default {
     addProject: (user, project) => {
         const userDoc = db.collection('users').doc(user.id).collection('projects').set(project, {merge:true})
     },
+
+    getProjects: async userId => {
+        const userProjects = await db.collection('users').doc(userId).collection('projects').get()
+        return userProjects.docs.map(doc => doc.data())
+    }
+    
 }

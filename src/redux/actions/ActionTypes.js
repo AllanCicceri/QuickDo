@@ -5,7 +5,8 @@ const ActionTypes = {
     },
 
     project: {
-        active: 'ACTIVE'
+        active: 'ACTIVE',
+        all: 'ALL',
     }
 }
 
