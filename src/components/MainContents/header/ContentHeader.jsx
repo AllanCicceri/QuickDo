@@ -10,7 +10,7 @@ function ContentHeader(){
             <div className="contentHeader-searchContainer">
                 <input type="text" placeholder="search for task..."/>
             </div>
-            <div className="contentHeader-insertTask">+ Add Task</div>
+            <button className="contentHeader-insertTask">+ Add Task</button>
         </header>
     )
 }

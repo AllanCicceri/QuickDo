@@ -11,19 +11,23 @@ function ProjectsNav() {
 
     const addProject = () =>
     {
+        const projectName = document.getElementById('projectNameInput')
+        if(projectName.value === '') return
+
         const project = {
-            id: 8383,
-            title: 'Projetinho basico',
-            description: 'É um projetinho muito básico para teste'
+            title: projectName.value,
         }
 
+        projectName.value = ''
+        
         Api.addProject(stateUser, project)
     }
 
     return (
         <div className="projects-container">
             <div className="projects-addProject-container">
-                <div className="projects-addProject-btn" onClick={addProject}>+ add Project</div>
+                <input type="text" id="projectNameInput" className="projects-inputNameProject" placeholder="Name your new project"/>
+                <button className="projects-addProject-btn" onClick={addProject}>+ add</button>
             </div>
             <div className="projects-ListOfProjects">
                 {projectsState !== null && projectsState.map((item) => (

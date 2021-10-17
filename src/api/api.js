@@ -39,7 +39,7 @@ export default {
     },
 
     addProject: (user, project) => {
-        const userDoc = db.collection('users').doc(user.id).collection('projects').set(project, {merge:true})
+        const userDoc = db.collection('users').doc(user.id).collection('projects').add(project, {merge:true})
     },
 
     getProjects: async userId => {
