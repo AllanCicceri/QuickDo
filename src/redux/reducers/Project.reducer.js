@@ -3,8 +3,6 @@ import ActionTypes from "../actions/ActionTypes";
 
 function ProjectReducer(state=null, actions){
     switch (actions.type) {
-        case ActionTypes.project.active:
-            return {...actions.payload};
 
         case ActionTypes.project.all:
             return [...actions.payload]

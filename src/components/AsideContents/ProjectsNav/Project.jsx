@@ -1,6 +1,6 @@
 import './Project.css'
 import {FaProjectDiagram, FaEdit, FaThermometerFull} from 'react-icons/fa/'
-import ProjectActions from '../../../redux/actions/Project.actions'
+import ActiveProjectActions from '../../../redux/actions/ActiveProject'
 import {useDispatch} from 'react-redux'
 import {useRef} from 'react'
 
@@ -10,7 +10,7 @@ function Project({item}){
     const faEditStyle = { color: "var(--grayColor)", fontSize: "1em", marginLeft: "15px", cursor:"pointer" }
     
     const dispatch = useDispatch()
-    const dispatchProject = () => dispatch(ProjectActions.selectProject(item))
+    const dispatchProject = () => dispatch(ActiveProjectActions.activeProject(item))
     
     console.log('item',item)
     return(
@@ -21,7 +21,7 @@ function Project({item}){
                 {item.title}
             </div>
 
-            <FaEdit style={faEditStyle} />
+            {/* <FaEdit style={faEditStyle} /> */}
         </div>
     )
 }
