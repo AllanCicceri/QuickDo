@@ -6,6 +6,13 @@ const ProjectActions = {
             type: ActionTypes.project.all,
             payload: projects
         }
+    },
+
+    addPoject(projects){
+        return{
+            type: ActionTypes.project.add,
+            payload: projects
+        }
     }
 }
 

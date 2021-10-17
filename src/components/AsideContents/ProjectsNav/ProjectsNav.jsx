@@ -1,12 +1,15 @@
 import './ProjectsNav.css'
 import Project from './Project'
 import Api from '../../../api/api'
-import {useSelector} from 'react-redux'
+import {useSelector,useDispatch} from 'react-redux'
+import ProjectActions from '.././../../redux/actions/Project.actions'
+
 
 function ProjectsNav() {
     const projects = [{id:1,title:"Pojeto1"}, {id:2,title:"Pojeto2"}, {id:3,title:"Pojeto3"}]
     const stateUser = useSelector(state => state.user)
     const projectsState = useSelector(state => state.project)
+    const dispatch = useDispatch()
 
 
     const addProject = () =>
@@ -21,8 +24,11 @@ function ProjectsNav() {
         projectName.value = ''
         
         Api.addProject(stateUser, project)
-    }
 
+        const newState = [...projectsState, project]
+        dispatch(ProjectActions.addPoject(newState))
+    }
+    
     return (
         <div className="projects-container">
             <div className="projects-addProject-container">

@@ -6,6 +6,9 @@ function ProjectReducer(state=null, actions){
 
         case ActionTypes.project.all:
             return [...actions.payload]
+
+        case ActionTypes.project.add:
+            return [...actions.payload]
     
         default:
             return state;

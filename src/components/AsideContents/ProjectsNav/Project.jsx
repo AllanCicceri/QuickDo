@@ -12,7 +12,7 @@ function Project({item}){
     const dispatch = useDispatch()
     const dispatchProject = () => dispatch(ActiveProjectActions.activeProject(item))
     
-    console.log('item',item)
+    
     return(
         <div className="projectItem" onClick={dispatchProject}>
             <FaProjectDiagram style={projectDiagramStyle}/>
