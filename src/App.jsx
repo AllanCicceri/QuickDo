@@ -3,15 +3,22 @@ import AsideContainer from './components/AsideContents/AsideContainer';
 import MainContainer from './components/MainContents/MainContainer';
 import Footer from './components/Footer';
 import Login from './components/LoginScreen/Login';
-import { useEffect,useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import Api from './api/api';
 import ProjectActions from './redux/actions/Project.actions';
 
+
 function App() {
   const userState = useSelector(state => state.user)
-  const projectsState = useSelector(state => state.project)
+  const projectStates = useSelector(state => state.project)
   const dispatch = useDispatch()
+
+  const projectsState = useMemo(() => {
+
+  },[projectStates])
+  
+
 
   async function getProjects() {
     const userProjects = await Api.getProjects(userState.id)
@@ -22,10 +29,10 @@ function App() {
     userState !== null && getProjects()
   }, [userState])
 
-  const projectsToRender = useMemo(() => projectsState, projectsState)
+
   useEffect(() => {
-    projectsToRender !== null && getProjects()
-  }, [projectsToRender])
+    userState !== null && getProjects()
+  }, [projectsState])
 
 
   if (userState === null)
@@ -36,8 +43,6 @@ function App() {
     <div className="app">
       <AsideContainer />
       <MainContainer />
-
-      {/* <Footer/> */}
     </div>
   );
 }

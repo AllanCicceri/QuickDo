@@ -11,8 +11,8 @@ header.contentHeader{
 }
 
 .contentHeader-searchContainer{
-    width: 40rem;
-    height: 2rem;
+    width: 500px;
+    height: 30px;
 
     border: var(--grayColor) solid 1px;
     border-radius: 50px;
