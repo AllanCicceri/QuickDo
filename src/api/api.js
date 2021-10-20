@@ -43,8 +43,13 @@ export default {
     },
 
     getProjects: async userId => {
+        
         const userProjects = await db.collection('users').doc(userId).collection('projects').get()
-        return userProjects.docs.map(doc => doc.data())
-    }
-    
+        const projects = userProjects.docs.map(doc => {
+            return {id: doc.id, ...doc.data()}
+        })
+        console.log('p',projects)
+        return projects
+    },
+
 }
