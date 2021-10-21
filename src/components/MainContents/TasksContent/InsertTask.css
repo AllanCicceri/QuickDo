@@ -1,0 +1,14 @@
+.insertTask-container{
+    width: 250px;
+    height: 250px;
+    z-index: 99;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px 20px;
+
+    border-radius: 25px;
+    border: 1px solid var(--grayColor);
+    background-color: #fff;
+    box-shadow: 1px 1px 3px 3px rgba(100, 100, 100, .3);
+}
