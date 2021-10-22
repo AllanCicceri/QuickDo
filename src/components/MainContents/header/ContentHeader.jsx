@@ -17,9 +17,9 @@ function ContentHeader(){
     }
 
     
-    showAddTask && window.onkeyup(function(e) {
-        if(e.key === "Escape") setShowAddTask(false)
-    })
+    document.onkeyup = e => {
+        if(e.key === "Escape" && showAddTask) setShowAddTask(false)
+    }
     
 
     return(
