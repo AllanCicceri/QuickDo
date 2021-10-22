@@ -1,14 +1,68 @@
 .insertTask-container{
     width: 250px;
-    height: 250px;
+    height: 260px;
     z-index: 99;
     position: absolute;
     top: 0;
     right: 0;
     margin: 10px 20px;
+    padding: 10px 5px;
 
-    border-radius: 25px;
-    border: 1px solid var(--grayColor);
-    background-color: #fff;
+    border-radius: 15px;
+    border: 2px solid var(--grayColor);
+    background-color: var(--blueColor);
     box-shadow: 1px 1px 3px 3px rgba(100, 100, 100, .3);
+
+    display: flex;
+}
+
+.insertTask-form{
+    padding: 1px 10px;
+}
+.insertTask-description, .insertTask-title{
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid var(--grayColor);
+    width: 100%;
+}
+
+.insertTask-description{
+    height: 150px;
+    margin: 5px 0;
+    font-size: 13px;
+    resize: none;
+}
+.insertTask-title{
+    height: 25px;
+}
+
+.insertTask-labelPriority{
+    font-size: 13px;
+    margin-right: 10px;
+}
+.insertTask-buttonsContainer{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.insertTask-buttonsContainer button{
+    width: 100px;
+    background-color: #FFF;
+    border-radius: 5px;
+    border: 1px solid var(--grayColor)
+}
+.insertTask-btnConfirm{
+    color: green;
+    font-weight: bold;
+}
+.insertTask-btnCancel{
+    color: red;
+    font-weight: bold;
+}
+.insertTask-select{
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid var(--grayColor);
+
 }

@@ -16,6 +16,11 @@ function ContentHeader(){
         // Api.addTask(activeProjectState, {title:'myLittleTask', description:'Ive got to do', state:'todo', priority:'low'})
     }
 
+    
+    showAddTask && window.onkeyup(function(e) {
+        if(e.key === "Escape") setShowAddTask(false)
+    })
+    
 
     return(
         <header className="contentHeader">
