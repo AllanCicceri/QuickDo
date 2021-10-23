@@ -1,4 +1,4 @@
-.insertTask-container{
+/* .insertTask-container{
     width: 250px;
     height: 260px;
     z-index: 99;
@@ -14,7 +14,7 @@
     box-shadow: 1px 1px 3px 3px rgba(100, 100, 100, .3);
 
     display: flex;
-}
+} */
 
 .insertTask-form{
     padding: 1px 10px;
@@ -62,11 +62,13 @@
     font-weight: bold;
 }
 
-input[type="color"] {
-	-webkit-appearance: none;
-	/* border: 2px solid #ddd; */
-    padding: 1px;
-    border-radius: 5px;
-	width: 35px;
-	height: 20px;
+.colorsPicker{
+    display: flex;
+    justify-content: space-around;
+}
+.colorsPicker-element{
+    width: 15px;
+    height: 15px;
+    border: 2px var(--grayColor) solid;
+    cursor: pointer;
 }
