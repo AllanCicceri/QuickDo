@@ -1,21 +1,3 @@
-/* .insertTask-container{
-    width: 250px;
-    height: 260px;
-    z-index: 99;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 10px 20px;
-    padding: 10px 5px;
-
-    border-radius: 15px;
-    border: 2px solid var(--grayColor);
-    background-color: var(--blueColor);
-    box-shadow: 1px 1px 3px 3px rgba(100, 100, 100, .3);
-
-    display: flex;
-} */
-
 .insertTask-form{
     padding: 1px 10px;
 }
@@ -69,6 +51,6 @@
 .colorsPicker-element{
     width: 15px;
     height: 15px;
-    border: 2px var(--grayColor) solid;
+    border: 2px #fff solid;
     cursor: pointer;
 }
