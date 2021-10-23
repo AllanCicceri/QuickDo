@@ -10,14 +10,14 @@ function InsertTask(){
     const handleConfirm = e => {
         e.preventDefault()
         setTaskObject({...taskObject, color: selectedColor})
-        
+        console.log(taskObject)        
     }
 
     const handleTaskTitle = e => {
-        setTaskObject({title: e.target.value})
+        setTaskObject({...taskObject, color: selectedColor, title: e.target.value})
     }
     const handleTaskDescription = e => {
-        setTaskObject({color: selectedColor, description: e.target.value})
+        setTaskObject({...taskObject, color: selectedColor, description: e.target.value})
     }
 
     const handleColor = color => {
