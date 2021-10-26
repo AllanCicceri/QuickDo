@@ -35,13 +35,15 @@
     border-radius: 5px;
     border: 1px solid var(--grayColor)
 }
+.insertTask-btnConfirm, .insertTask-btnCancel{
+    font-weight: bold;
+    cursor: pointer;
+}
 .insertTask-btnConfirm{
     color: green;
-    font-weight: bold;
 }
 .insertTask-btnCancel{
     color: red;
-    font-weight: bold;
 }
 
 .colorsPicker{
