@@ -8,6 +8,10 @@ const ActionTypes = {
         active: 'ACTIVE',
         all: 'ALL',
         add: 'ADD',
+    },
+
+    task: {
+        active: 'ALL',
     }
 }
 

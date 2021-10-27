@@ -1,4 +1,4 @@
-main.tasksContainer{
+main.tasksContainer, .tasksContainer-noTasks{
     width: 95%;
     height: 90%;
     padding: 0 20px;
@@ -6,4 +6,11 @@ main.tasksContainer{
     border-radius: 50px;
     background-color: #fff;
     box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, .2);
+}
+.tasksContainer-noTasks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--grayColor);
+    font-size: 30px;
 }

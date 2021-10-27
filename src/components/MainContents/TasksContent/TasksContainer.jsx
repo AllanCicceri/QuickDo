@@ -9,7 +9,7 @@ function TasksContainer() {
     const tasksDone = [{ id: 66, title: 'mytitle', obs: 'ive got to do that sh' }]
 
     if(activeProjectState === null)
-        return(<main className="tasksContainer"><h2>No project selected</h2></main>)
+        return(<main className="tasksContainer-noTasks"><h2>Select a project :)</h2></main>)
 
     return (
         <main className="tasksContainer">
