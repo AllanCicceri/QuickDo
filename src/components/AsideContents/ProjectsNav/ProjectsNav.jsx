@@ -3,16 +3,18 @@ import Project from './Project'
 import Api from '../../../api/api'
 import {useSelector,useDispatch} from 'react-redux'
 import ProjectActions from '.././../../redux/actions/Project.actions'
-import InsertItem from '../../InsertItem/InsertItem'
+import InsertItem from '../../CommonComponents/InsertItem'
 import {useState} from 'react'
+import AddButton from '../../CommonComponents/AddButton'
 
 function ProjectsNav() {
+    const btnProps={label:'+ Add Project', width:'100%', onClick:handleAddProjectClick, enabled:true}
     const stateUser = useSelector(state => state.user)
     const projectsState = useSelector(state => state.project)
     const [showInsertItem, setShowInsertItem] = useState(false)
     const dispatch = useDispatch()
 
-    const handleAddProjectClick = () => {
+    function handleAddProjectClick(){
         setShowInsertItem(true)
     }
 
@@ -30,7 +32,7 @@ function ProjectsNav() {
     return (
         <div className="projects-container">
             <div className="projects-addProject-container">
-                <button className="projects-addProject-btn" onClick={handleAddProjectClick}>+ add Project</button>
+                <AddButton props={btnProps}/>
                 {showInsertItem && <InsertItem insertCB={addProject}/>}
             </div>
             <div className="projects-ListOfProjects">

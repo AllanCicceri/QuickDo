@@ -33,7 +33,6 @@ function Login(){
             }
             
             api.addUser(user)
-            console.log('aqyu')
             dispatch(UserActions.userLogin(user))
         }else{
             alert('Erro!')

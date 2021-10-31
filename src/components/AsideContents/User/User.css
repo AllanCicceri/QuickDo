@@ -11,10 +11,21 @@
 
 .user-container img{
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .user-name{
     padding-top: 10px;
     font-weight: bold;
     color: var(--grayColor);
+}
+
+.user-logOut{
+    font-size: .6rem;
+    color: #fff;
+    background-color: var(--grayColor);
+    border-radius: 10px;
+    padding: 5px 10px;
+    z-index: 99;
+    cursor: pointer;
 }
