@@ -16,6 +16,12 @@
 .user-container img{
     border-radius: 50%;
     cursor: pointer;
+    border: 1px dashed var(--grayColor);
+    padding: 1px;
+}
+.user-container img:hover{
+    transition: all ease .8s;
+    opacity: .8;
 }
 
 .user-logOut{

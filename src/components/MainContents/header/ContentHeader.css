@@ -14,7 +14,7 @@ header.contentHeader{
     height: 30px;
 
     border: var(--grayColor) solid 1px;
-    border-radius: 50px;
+    border-radius: 10px;
     padding: 2px 5px;
     background-color: #FFF;
     border: 1px var(--grayColor) solid;

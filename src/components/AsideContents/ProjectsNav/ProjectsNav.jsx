@@ -28,6 +28,10 @@ function ProjectsNav() {
         const newState = [...projectsState, item]
         dispatch(ProjectActions.addPoject(newState))
     }
+
+    document.onkeyup = e => {
+        if(e.key === "Escape" && showInsertItem) setShowInsertItem(false)
+    }
     
     return (
         <div className="projects-container">

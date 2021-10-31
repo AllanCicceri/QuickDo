@@ -4,7 +4,7 @@ function AddButton({props}){
     
 
     return(
-        <StyledAddButton width={props.width} onClick={props.onClick} enabled={props.enabled}>
+        <StyledAddButton width={props.width} onClick={props.onClick} enabled={props.enabled} disabled={!props.enabled}>
             {props.label}
         </StyledAddButton>        
     )

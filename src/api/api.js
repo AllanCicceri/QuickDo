@@ -42,6 +42,10 @@ export default {
         const userDoc = db.collection('users').doc(user.id).collection('projects').add(project, {merge:true})
     },
 
+    addTask: (project, task) => {
+        db.collection('users').doc(project.userId).collection('projects').doc(project.id).collection('tasks').add(task, {merge:true})
+    },
+
     getProjects: async userId => {
         const userProjects = await db.collection('users').doc(userId).collection('projects').get()
         const projects = userProjects.docs.map(doc => {

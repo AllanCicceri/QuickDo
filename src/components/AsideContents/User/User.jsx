@@ -14,6 +14,10 @@ function User() {
     }
     const userLogOut = () => dispatch(UserActions.userLogout())
 
+    
+    document.onkeyup = e => {
+        if(e.key === "Escape" && logOutVisible) setlogOutVisible(false)
+    }
 
     return (
         <div className="user-container">
