@@ -11,7 +11,7 @@ const StyledInsertItem = styled.div`
     margin: 20px 50px;
     padding: 10px 10px;
 
-    border-radius: 10px;
+    border-radius: 13px;
     border: 2px solid var(--grayColor);
 
     box-shadow: 1px 1px 3px 3px rgba(100, 100, 100, .3);
@@ -22,7 +22,7 @@ const StyledInsertItem = styled.div`
     textarea,input{
         width: 100%;
         margin-top: 5px;
-        border-radius: 5px;
+        border-radius: 3px;
         border: 1px var(--grayColor) solid;
         outline: none;
         font-size: .8rem;
@@ -36,14 +36,14 @@ const StyledInsertItem = styled.div`
 
     .insertItem--colorPicker{
         display: flex;
-        justify-content: space-between;
-        margin: 15px 0;
+        margin: 5px 0 30px 0;
         padding: 0 3px;
     }
 
     .insertItem--color{
         width: 15px;
         height: 15px;
+        margin-right: 5px;
         border: 2px #fff solid;
         border-radius: 5px;
         cursor: pointer;
