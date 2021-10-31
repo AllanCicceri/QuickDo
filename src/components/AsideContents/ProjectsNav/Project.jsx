@@ -1,12 +1,13 @@
 import './Project.css'
-import {FaProjectDiagram, FaEdit, FaThermometerFull} from 'react-icons/fa/'
+import {AiFillFilePpt} from 'react-icons/ai'
 import ActiveProjectActions from '../../../redux/actions/ActiveProject'
 import {useDispatch} from 'react-redux'
 import Api from '../../../api/api'
+import Tippy from '@tippyjs/react'
+import 'tippy.js/dist/tippy.css'
 
 function Project({item}){
-    const projectDiagramStyle = { color: "var(--yellowColor)", fontSize: "1.5em" }
-    const faEditStyle = { color: "var(--grayColor)", fontSize: "1em", marginLeft: "15px", cursor:"pointer" }
+    const projectIconStyle = { color: item.color, borderRadius: '5px', fontSize: "1.5em" }
     const dispatch = useDispatch()
 
     const handleProjectClick = async () => {
@@ -20,17 +21,18 @@ function Project({item}){
     
     const getProjectTasks = async()=>{
         const tasks = await Api.getTasks(item)
-        console.log('myTask', tasks)    
     }
     
     return(
-        <div className="projectItem" onClick={handleProjectClick}>
-            <FaProjectDiagram style={projectDiagramStyle}/>
-        
-            <div className="projectItem-name" >
-                {item.title}
+        <Tippy content={item.description}>
+            <div className="projectItem" onClick={handleProjectClick}>
+                <AiFillFilePpt style={projectIconStyle}/>
+            
+                <div className="projectItem-name" >
+                    {item.title}
+                </div>
             </div>
-        </div>
+        </Tippy>
     )
 }
 

@@ -3,42 +3,35 @@ import Project from './Project'
 import Api from '../../../api/api'
 import {useSelector,useDispatch} from 'react-redux'
 import ProjectActions from '.././../../redux/actions/Project.actions'
-import InsertProject from './InsertProject'
+import InsertItem from '../../InsertItem/InsertItem'
 import {useState} from 'react'
 
 function ProjectsNav() {
     const stateUser = useSelector(state => state.user)
     const projectsState = useSelector(state => state.project)
-    const [showInsertProject, setShowInsertProject] = useState(false)
+    const [showInsertItem, setShowInsertItem] = useState(false)
     const dispatch = useDispatch()
 
     const handleAddProjectClick = () => {
-        setShowInsertProject(true)
+        setShowInsertItem(true)
     }
 
-    const addProject = () =>
+    const addProject = (item) =>
     {
-        const projectName = document.getElementById('projectNameInput')
-        if(projectName.value === '') return
-
-        const project = {
-            title: projectName.value,
-        }
-
-        projectName.value = ''
+        setShowInsertItem(false)
+        if(item === null) return
         
-        Api.addProject(stateUser, project)
+        Api.addProject(stateUser, item)
 
-        const newState = [...projectsState, project]
+        const newState = [...projectsState, item]
         dispatch(ProjectActions.addPoject(newState))
     }
     
     return (
         <div className="projects-container">
             <div className="projects-addProject-container">
-                {/* <input type="text" id="projectNameInput" className="projects-inputNameProject" placeholder="Name your new project"/> */}
                 <button className="projects-addProject-btn" onClick={handleAddProjectClick}>+ add Project</button>
-                {showInsertProject && <InsertProject/>}
+                {showInsertItem && <InsertItem insertCB={addProject}/>}
             </div>
             <div className="projects-ListOfProjects">
                 {projectsState !== null && projectsState.map((item) => (

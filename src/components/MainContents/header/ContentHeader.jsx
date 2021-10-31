@@ -1,5 +1,5 @@
 import './ContentHeader.css'
-import InsertTask from '../TasksContent/InsertTask'
+import InsertItem from '../../InsertItem/InsertItem'
 import {useSelector} from 'react-redux'
 import Api from '../../../api/api'
 import {useState} from 'react'
@@ -9,11 +9,18 @@ function ContentHeader(){
     const [showAddTask, setShowAddTask] = useState(false)
 
     const handleAddTask = () => {
-        if(activeProjectState == null) return
+        if(activeProjectState === null) return
 
         setShowAddTask(true)
 
         // Api.addTask(activeProjectState, {title:'myLittleTask', description:'Ive got to do', state:'todo', priority:'low'})
+    }
+
+    const handleInsertItem = (item) => {
+        if(item === null){
+            setShowAddTask(false)
+            return
+        }
     }
 
     
@@ -29,8 +36,8 @@ function ContentHeader(){
                 <input type="text" placeholder="search for task..."/>
             </div>
             <div className="contentHeader--buttonContainer">
-                <button className="contentHeader-insertTask" onClick={handleAddTask}>+ Add Task</button>
-                {showAddTask && <InsertTask/>}
+                <button className="contentHeader-btnInsertTask" onClick={handleAddTask}>+ Add Task</button>
+                {showAddTask && <InsertItem insertCB={handleInsertItem}/>}
             </div>
         </header>
     )

@@ -11,7 +11,7 @@ header.contentHeader{
 }
 
 .contentHeader-searchContainer{
-    width: 500px;
+    width: 40%;
     height: 30px;
 
     border: var(--grayColor) solid 1px;
@@ -31,27 +31,38 @@ header.contentHeader{
     margin-left: 5px;
     color: var(--grayColor);
 }
-.contentHeader-insertTask{
-    background-color: var(--yellowColor);
-    color: #fff;
-    border-radius: 20px;
-    box-shadow: 1px 1px 5px 1px rgba(50, 50, 50, .3);
-    border: none;
-    padding: 8px 10px;
+.contentHeader-btnInsertTask{
+    width: 150px;
+    height: 30px;
+    padding: 1px;
+    margin: 0 10px;
 
-    font-size: 1.3rem;
+    text-align: center;
+    font-size: 1.1rem;
     font-weight: bold;
     font-family: 'Yanone Kaffeesatz', sans-serif;
+
+    box-shadow: 1px 1px 5px 1px rgba(50, 50, 50, .2);
+    background-color: #FBB02D;
+    color: #FFF;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
 }
 
 .contentHeader h2{
     color: var(--grayColor);
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-weight: 700;
+    width: 30%;
+    overflow: hidden;
 }
 
 .contentHeader--buttonContainer{
     position: relative;
+    width: 30%;
+    display: flex;
+    justify-content: end;
 }
 
 .addTask-container{
