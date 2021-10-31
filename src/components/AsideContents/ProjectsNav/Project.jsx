@@ -7,7 +7,7 @@ import Tippy from '@tippyjs/react'
 import 'tippy.js/dist/tippy.css'
 
 function Project({item}){
-    const projectIconStyle = { color: item.color, borderRadius: '5px', fontSize: "1.5em" }
+    const projectIconStyle = { color: item.color, borderRadius: '5px', fontSize: "1.5em", width:'20%' }
     const dispatch = useDispatch()
 
     const handleProjectClick = async () => {
