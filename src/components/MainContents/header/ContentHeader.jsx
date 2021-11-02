@@ -20,17 +20,17 @@ function ContentHeader(){
     }
 
 
-    const handleInsertItem = (task) => {
+    const handleInsertItem = async (task) => {
         setShowAddTask(false)
         if(task === null) return
         
-        addNewTask(task)
-        dispatchTask({type:ActionTypes.ADD_TASK, newTask: task})
+        const newTask = {...task, state: taskState.TODO}
+        addNewTaskDb(newTask)
+        dispatchTask({type:ActionTypes.ADD_TASK, newTask})
     }
     
-    const addNewTask = task => {
-        const newTask = {...task, state: taskState.TODO}
-        Api.addTask(activeProjectState, newTask)
+    const addNewTaskDb = task => {
+        Api.addTask(activeProjectState, task)
     }
     
     

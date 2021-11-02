@@ -21,7 +21,6 @@ function App() {
 
   async function getProjects() {
     const userProjects = await Api.getProjects(userState.id)
-    console.log('newUser', userProjects)
     dispatch({type:ActionTypes.SET_USER_PROJECTS, userProjects})
   }
 
