@@ -23,7 +23,7 @@ function TasksContainer() {
     return (
         <main className="tasksContainer">
             <div className="tasks-todo">
-                <div className="todo-label">To do</div>
+                <div className="todo-label">To Do</div>
                 <div className="taskItems-todo">
                     {tasksTodo.length > 0 && tasksTodo.map((item, index) => (
                         <TaskItem key={index} item={item} />

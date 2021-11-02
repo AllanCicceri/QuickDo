@@ -6,6 +6,9 @@ main.tasksContainer, .tasksContainer-noTasks{
     border-radius: 20px;
     background-color: #fff;
     box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, .2);
+
+    display: flex;
+    flex-direction: column;
 }
 .tasksContainer-noTasks{
     display: flex;
@@ -13,4 +16,22 @@ main.tasksContainer, .tasksContainer-noTasks{
     align-items: center;
     color: var(--grayColor);
     font-size: 30px;
+}
+
+.todo-label, .doing-label, .done-label{
+    color: var(--grayColor);
+    font-weight: bold;
+    padding: 10px 5px;
+}
+
+.tasks-todo, .tasks-doing, .tasks-done{
+    height: 33.33%;
+}
+
+.taskItems-todo, .taskItems-doing, .taskItems-done{
+    width: 100%;
+    height: 90%;
+    padding: 10px;
+    display: inline-block;
+    overflow: scroll;
 }

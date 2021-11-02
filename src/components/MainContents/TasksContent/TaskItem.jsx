@@ -1,11 +1,14 @@
-import './TaskItem.css'
+import StyledTaskItem from './TaskItem.styled'
 
 function TaskItem({item}){
+    
     return(
-        <span className="taskItem">
-            <div className="taskItem-title"> {item.title} </div>
-           <div className="taskItem-description">{item.obs}</div>
-        </span>
+        <StyledTaskItem backGroundColor={item.color}>
+            <div className="taskItem-Container">
+                <div className="taskItem-title"> {item.title} </div>
+                <div className="taskItem-description">{item.description}</div>
+            </div>
+        </StyledTaskItem>
     )
 }
 
