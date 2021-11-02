@@ -46,7 +46,7 @@ header.contentHeader{
     position: relative;
     width: 30%;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .addTask-container{

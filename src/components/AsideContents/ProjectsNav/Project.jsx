@@ -1,10 +1,10 @@
 import './Project.css'
 import {AiFillFilePpt} from 'react-icons/ai'
-import ActiveProjectActions from '../../../redux/actions/ActiveProject'
 import {useDispatch,useSelector} from 'react-redux'
 import Api from '../../../api/api'
 import Tippy from '@tippyjs/react'
 import 'tippy.js/dist/tippy.css'
+import ActionTypes from '../../../redux/actions/ActionTypes'
 
 function Project({item}){
     const projectIconStyle = { color: item.color, borderRadius: '5px', fontSize: "1.5em", width:'20%' }
@@ -13,15 +13,16 @@ function Project({item}){
 
     const handleProjectClick = async () => {
         dispatchProject()
-        const tasks = getProjectTasks()
+        const projectTasks = await getProjectTasks()
+        dispatch({type: ActionTypes.SET_PROJECT_TASKS, projectTasks})
     }
 
     const dispatchProject = () => {
-        dispatch(ActiveProjectActions.activeProject(item))
+        dispatch({type:ActionTypes.SET_ACTIVE_PROJECT, activeProject:item})
     }
     
     const getProjectTasks = async()=>{
-        const tasks = await Api.getTasks(item)
+        return await Api.getTasks(item)
     }
 
     return(

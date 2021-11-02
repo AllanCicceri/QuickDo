@@ -2,7 +2,7 @@ import './ProjectsNav.css'
 import Project from './Project'
 import Api from '../../../api/api'
 import {useSelector,useDispatch} from 'react-redux'
-import ProjectActions from '.././../../redux/actions/Project.actions'
+import ActionTypes from '../../../redux/actions/ActionTypes'
 import InsertItem from '../../CommonComponents/InsertItem'
 import {useState} from 'react'
 import AddButton from '../../CommonComponents/AddButton'
@@ -10,9 +10,9 @@ import AddButton from '../../CommonComponents/AddButton'
 function ProjectsNav() {
     const btnProps={label:'+ Add Project', width:'100%', onClick:handleAddProjectClick, enabled:true}
     const stateUser = useSelector(state => state.user)
-    const projectsState = useSelector(state => state.project)
+    const projectsState = useSelector(state => state.project.allProjects)
     const [showInsertItem, setShowInsertItem] = useState(false)
-    const dispatch = useDispatch()
+    const dispatchProject = useDispatch()
 
     function handleAddProjectClick(){
         setShowInsertItem(true)
@@ -25,8 +25,9 @@ function ProjectsNav() {
         
         Api.addProject(stateUser, item)
 
-        const newState = [...projectsState, item]
-        dispatch(ProjectActions.addPoject(newState))
+        // const newState = [...projectsState, item]
+        
+        dispatchProject({type:ActionTypes.ADD_PROJECT, newProject:item})
     }
 
     document.onkeyup = e => {

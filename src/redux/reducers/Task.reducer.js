@@ -1,12 +1,16 @@
 import ActionTypes from "../actions/ActionTypes";
-import api from "../../api/api";
 
-function TaskReducer(state=null, actions){
+const initialState = {
+    allTasks: [],
+}
+
+function TaskReducer(state=initialState, actions){
     switch (actions.type) {
 
-        case ActionTypes.task.all:
-            // api.addTask(actions.payload.project, actions.payload.task)
-            return actions.payload.task
+        case ActionTypes.SET_PROJECT_TASKS:
+            return {...state, allTasks: actions.projectTasks}
+        case ActionTypes.ADD_TASK:
+            return {...state, allTasks: state.allTasks.concat(actions.newTask)}
     
         default:
             return state;

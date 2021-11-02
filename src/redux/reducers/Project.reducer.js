@@ -1,14 +1,21 @@
 import { act } from "react-dom/test-utils";
 import ActionTypes from "../actions/ActionTypes";
 
-function ProjectReducer(state=null, actions){
+const initialState = {
+    activeProject: null,
+    allProjects: []
+}
+
+function ProjectReducer(state=initialState, actions){
     switch (actions.type) {
+        case ActionTypes.SET_ACTIVE_PROJECT:
+            return {...state, activeProject: actions.activeProject}
 
-        case ActionTypes.project.all:
-            return [...actions.payload]
+        case ActionTypes.ADD_PROJECT:
+            return {...state, allProjects: state.allProjects.concat(actions.newProject)}
 
-        case ActionTypes.project.add:
-            return [...actions.payload]
+        case ActionTypes.SET_USER_PROJECTS:
+            return {...state, allProjects: actions.userProjects}
     
         default:
             return state;

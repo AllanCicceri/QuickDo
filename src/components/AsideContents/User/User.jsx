@@ -1,8 +1,8 @@
 import './User.css'
 import { useSelector, useDispatch } from 'react-redux'
-import UserActions from '../../../redux/actions/User.actions'
 import {useState} from 'react'
 import {TiArrowSortedDown} from 'react-icons/ti'
+import ActionTypes from '../../../redux/actions/ActionTypes'
 
 function User() {
     const state = useSelector(state => state.user)
@@ -12,7 +12,7 @@ function User() {
     const handleLogOutVisibility = () => {
         setlogOutVisible(!logOutVisible)
     }
-    const userLogOut = () => dispatch(UserActions.userLogout())
+    const userLogOut = () => dispatch({type:ActionTypes.USER_LOGOUT})
 
     
     document.onkeyup = e => {

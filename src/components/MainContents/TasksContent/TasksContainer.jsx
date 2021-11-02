@@ -1,12 +1,14 @@
 import './TasksContainer.css'
 import TaskItem from './TaskItem'
 import {useSelector} from 'react-redux'
+import TaskState from '../../../assets/js/TaskState'
 
 function TasksContainer() {
-    const activeProjectState = useSelector(state => state.activeProject)
-    const tasksTodo = [{ id: 1, title: 'mytitle', obs: 'ive got to do that sh' }]
-    const tasksDoing = [{ id: 44, title: 'mytitle', obs: 'ive got to do that sh' }]
-    const tasksDone = [{ id: 66, title: 'mytitle', obs: 'ive got to do that sh' }]
+    const activeProjectState = useSelector(state => state.project.activeProject)
+    const tasksState = useSelector(state => state.tasks)
+    const tasksTodo = tasksState.allTasks.filter(task => task.state === TaskState.TODO)
+    const tasksDoing = tasksState.allTasks.filter(task => task.state === TaskState.DOING)
+    const tasksDone = tasksState.allTasks.filter(task => task.state === TaskState.DONE)
 
     if(activeProjectState === null)
         return(<main className="tasksContainer-noTasks"><h2>Select a project :)</h2></main>)

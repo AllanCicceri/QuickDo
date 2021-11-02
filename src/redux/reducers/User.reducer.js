@@ -3,10 +3,10 @@ import ActionTypes from '../actions/ActionTypes'
 function UserReducer(state=null, actions){
     
     switch (actions.type) {
-        case ActionTypes.user.login:
-            return {id: actions.payload.id, name: actions.payload.name, email: actions.payload.email, avatar: actions.payload.avatar }
+        case ActionTypes.USER_LOGIN:
+            return actions.userLogin
             
-        case ActionTypes.user.logout:
+        case ActionTypes.USER_LOGOUT:
             return null
         
         default:

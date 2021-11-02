@@ -1,18 +1,15 @@
 const ActionTypes = {
-    user: {
-        login: 'LOGIN',
-        logout: 'LOGOUT',
-    },
+    USER_LOGIN: 'USER_LOGIN',
+    USER_LOGOUT: 'USER_LOGOUT',
 
-    project: {
-        active: 'ACTIVE',
-        all: 'ALL',
-        add: 'ADD',
-    },
+    ADD_PROJECT: 'ADD_PROJECT',
+    SET_ACTIVE_PROJECT: 'SET_ACTIVE_PROJECT',
+    SET_USER_PROJECTS: 'SET_USER_PROJECTS',
 
-    task: {
-        active: 'ALL',
-    }
+    ADD_TASK: 'ADD_TASK',
+    SET_PROJECT_TASKS: 'SET_PROJECT_TASKS',
+    SET_TODO_TASKS: 'SET_TODO_TASKS'
+    
 }
 
 export default ActionTypes

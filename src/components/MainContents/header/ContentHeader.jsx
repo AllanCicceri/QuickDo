@@ -5,10 +5,13 @@ import Api from '../../../api/api'
 import {useState} from 'react'
 import AddButton from '../../CommonComponents/AddButton'
 import taskState from '../../../assets/js/TaskState'
+import ActionTypes from '../../../redux/actions/ActionTypes'
+import {useDispatch} from 'react-redux'
 
 function ContentHeader(){
-    const activeProjectState = useSelector(state => state.activeProject)
+    const activeProjectState = useSelector(state => state.project.activeProject)
     const [showAddTask, setShowAddTask] = useState(false)
+    const dispatchTask = useDispatch()
     const addButtonProps = {label:'+ Add Task', width:'150px', onClick:handleShowAddTask, enabled:(activeProjectState !== null)}
 
     
@@ -22,6 +25,7 @@ function ContentHeader(){
         if(task === null) return
         
         addNewTask(task)
+        dispatchTask({type:ActionTypes.ADD_TASK, newTask: task})
     }
     
     const addNewTask = task => {
